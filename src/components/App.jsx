@@ -15,7 +15,7 @@ class App extends Component {
  
 handleFeedback = param => {
 this.setState(prevState => ({
-          value:prevState.value + 1,
+          [param]:prevState[param] + 1,
 }))
 };
 
@@ -26,7 +26,7 @@ countTotalFeedback = () => {
 countPositiveFeedbackPercentage = () => {
   const { good } = this.state;
   const total = this.countTotalFeedbacks();
-  return total > 0 ? Math.round((good / total) * 100) : 0;
+  return total > 0 ? Math.round((good / total) * 100) : 0
 };
  
 render(){
